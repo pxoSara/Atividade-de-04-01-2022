@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Última tarefa</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <table border="1">
+    <script>
+      var p1, media, inteligente, passou, i, j, aprovados;
+
+      media = 0;
+      inteligente = 0;
+      p1 = new Array(40);
+
+      for(i=1; i<41; i++)
+      {
+      p1[i] = parseFloat(window.prompt("Digite sua média final: "));
+
+      media = p1[i] + media;
+
+      if(p1[i] >= 6)
+      {
+        inteligente = inteligente + 1;
+      }
+      }
+      passou = inteligente / 40 * 100;
+      media = media / 4;
+
+
+
+      document.write("<tr><td colspan='3'>Média global da turma: ");
+      document.write("<td>" + media);
+
+      document.write("<tr><td colspan='3'>Quantidade de alunos acima da média:");
+      document.write("<td colspan='3'>" + inteligente);
+
+      document.write("<tr><td colspan='3'>Percentual de aprovados (média >= 6,0):");
+      document.write("<td>" + passou + "%");
+
+      document.write("<tr><td>Nº do Aluno");
+      document.write("<td>Média Final");
+      document.write("<td>Indicativo visual");
+      document.write("<td>Pontos para atingir a aprovação");
+
+      for(j=1; j<41; j++)
+      {
+        document.write("<tr><td>" + j)
+        document.write("<td>" + p1[j])
+        if(p1[j] >= 6)
+        {
+          document.write("<td><img src='aprovado.png' width='60xp' />")
+          document.write("<td>---");
+        }
+        else
+        {
+          document.write("<td><img src='reprovado.png' width='60xp' />")
+          aprovados = 6 - p1[j];
+          document.write("<td>" + aprovados);
+        }
+      }
+    </script>
+  </body>
+</html>
